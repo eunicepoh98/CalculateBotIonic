@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Simple Calculator Bot</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card text-wrap *ngFor="let msg of messages">
+    <ion-card-content *ngIf="msg.type === 'sent'" class="userMsg">
+      {{ msg.text }}
+    </ion-card-content>
+    <ion-card-content *ngIf="msg.type == 'received'" class="botMsg">
+      {{ msg.text }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="userMsg" name="userMsg" placeholder="Message"></ion-input>
+    </ion-item>
+    <button ion-button block (click)="sendMessage()">Send</button>
+  </ion-list>
+
+</ion-content>
