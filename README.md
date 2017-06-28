@@ -21,6 +21,6 @@
 >ionic g provider provider_name
 
 ### Deploy to device?
->ionic platform add android
+>ionic cordova platform add android
 
 >ionic run android
